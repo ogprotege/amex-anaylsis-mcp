@@ -5,6 +5,19 @@ All notable changes to the AmexAnalysis-MCP project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2025-01-15
+
+### Fixed
+- **Repository URL**: Updated all references from `amex-analysis-mcp` to `amex-anaylsis-mcp` throughout the codebase
+- **Test Execution**: Fixed test timeout issue by modifying `amex-mcp-server.ts:1548-1552` to only start the MCP server when run directly
+- **Vendor Unmasking**: Improved vendor unmasking in `amex-vendor-unmasker.ts:73-77` to properly handle both `STR*` and `STRIPE` patterns
+
+### Added
+- **Test Coverage**: Created `test-unmasking.ts` with comprehensive vendor unmasking tests
+
+### Changed
+- Verified all functionality after repository URL update
+
 ## [2.0.0] - 2024-01-15
 
 ### 🎉 Major Release: Vendor Unmasking Technology

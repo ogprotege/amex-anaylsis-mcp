@@ -6,8 +6,11 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p amex-mcp-tsconfig.json",
+    "build:enhanced": "tsc -p amex-mcp-tsconfig.json amex-mcp-server-enhanced.ts",
     "start": "node dist/amex-mcp-server.js",
+    "start:enhanced": "node dist/amex-mcp-server-enhanced.js",
     "dev": "tsx amex-mcp-server.ts",
+    "dev:enhanced": "tsx amex-mcp-server-enhanced.ts",
     "test": "tsx test-analyzer.ts",
     "test-unmasking": "tsx test-unmasking.ts"
   },

@@ -333,6 +333,12 @@ Create `amex-config.json`:
 
 ### MCP Tools
 
+**Note**: The system offers two server modes:
+- **Basic Server** (`amex-mcp-server.ts`): 6 high-level tools for everyday use
+- **Enhanced Server** (`amex-mcp-server-enhanced.ts`): 36 specialized tools for power users
+
+See [ENHANCED_SERVER_GUIDE.md](ENHANCED_SERVER_GUIDE.md) to enable all 36 tools including vendor unmasking, trend analysis, duplicate detection, tax categorization, and more.
+
 #### `analyze_amex_spending`
 
 Comprehensive spending analysis with export options.

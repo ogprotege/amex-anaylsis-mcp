@@ -49,6 +49,13 @@ Analyze my Amex spending from data/amex-2024.csv
 
 ## Claude Desktop Commands
 
+### Server Modes
+
+**Basic Mode (6 tools)**: Default installation
+**Enhanced Mode (36 tools)**: Run `npm run build:enhanced` and update config to use `amex-mcp-server-enhanced.js`
+
+See [ENHANCED_SERVER_GUIDE.md](ENHANCED_SERVER_GUIDE.md) for details on all 36 tools.
+
 ### Basic Analysis Commands
 
 ```bash
