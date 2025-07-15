@@ -717,8 +717,8 @@ node dist/amex-mcp-server.js --debug
 
 ```bash
 # Fork and clone
-git clone https://github.com/yourusername/AmexAnalysis-MCP.git
-cd AmexAnalysis-MCP
+git clone https://github.com/ogprotege/amex-analysis-mcp.git
+cd amex-analysis-mcp
 
 # Install dev dependencies
 npm install
