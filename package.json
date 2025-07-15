@@ -1,0 +1,31 @@
+{
+  "name": "amex-analysis-mcp",
+  "version": "2.0.0",
+  "description": "MCP server for Amex spending analysis with vendor unmasking",
+  "main": "amex-mcp-server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p amex-mcp-tsconfig.json",
+    "start": "node dist/amex-mcp-server.js",
+    "dev": "tsx amex-mcp-server.ts",
+    "test": "tsx test-analyzer.ts",
+    "test-unmasking": "tsx test-unmasking.ts"
+  },
+  "exports": {
+    ".": "./dist/amex-mcp-server.js",
+    "./vendor-unmasker": "./dist/amex-vendor-unmasker.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "papaparse": "^5.4.1",
+    "csv-writer": "^1.6.0",
+    "exceljs": "^4.4.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/papaparse": "^5.3.14",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0"
+  }
+}
