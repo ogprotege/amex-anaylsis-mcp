@@ -41,10 +41,10 @@ Unlike basic expense trackers, AmexAnalysis-MCP understands the modern payment e
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     Claude Desktop                           │
-│                         ↕ MCP                                │
+│                     Claude Desktop                          │
+│                         ↕ MCP                               │
 ├─────────────────────────────────────────────────────────────┤
-│                  AmexAnalysis-MCP Server                     │
+│                  AmexAnalysis-MCP Server                    │
 ├─────────────────────┬───────────────────┬───────────────────┤
 │   CSV Parser        │  Analysis Engine  │  Export Manager   │
 ├─────────────────────┼───────────────────┼───────────────────┤
