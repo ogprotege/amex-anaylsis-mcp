@@ -230,8 +230,8 @@ Categories are inferred using:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AmexAnalysis-MCP.git
-cd AmexAnalysis-MCP
+git clone https://github.com/ogprotege/amex-analysis-mcp.git
+cd amex-analysis-mcp
 
 # Install dependencies
 npm install
