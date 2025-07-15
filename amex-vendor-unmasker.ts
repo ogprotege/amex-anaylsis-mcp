@@ -72,7 +72,7 @@ export class VendorUnmasker {
       ],
       extractionRules: {
         method: 'regex',
-        regex: /STRIPE[:\s]+(.+?)(?:\s+\d{10,})?$/i,
+        regex: /(?:STR\*|STRIPE[:\s]+)(.+?)(?:\s+\d{10,})?$/i,
         cleanupPatterns: [/\s+CHARGE$/i]
       },
       confidence: 0.85

@@ -230,7 +230,7 @@ Categories are inferred using:
 
 ```bash
 # Clone the repository
-git clone https://github.com/ogprotege/amex-analysis-mcp.git
+git clone https://github.com/ogprotege/amex-anaylsis-mcp.git
 cd amex-analysis-mcp
 
 # Install dependencies
@@ -717,7 +717,7 @@ node dist/amex-mcp-server.js --debug
 
 ```bash
 # Fork and clone
-git clone https://github.com/ogprotege/amex-analysis-mcp.git
+git clone https://github.com/ogprotege/amex-anaylsis-mcp.git
 cd amex-analysis-mcp
 
 # Install dev dependencies

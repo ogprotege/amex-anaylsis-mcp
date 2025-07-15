@@ -1545,6 +1545,8 @@ class AmexMcpServer {
   }
 }
 
-// Run the server
-const server = new AmexMcpServer();
-server.run().catch(console.error);
+// Run the server only if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const server = new AmexMcpServer();
+  server.run().catch(console.error);
+}
