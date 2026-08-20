@@ -11,8 +11,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowJs": true,
-    "checkJs": false,
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -22,24 +20,19 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "allowSyntheticDefaultImports": true
   },
   "include": [
+    "src/**/*",
     "amex-mcp-server.ts",
-    "amex-vendor-unmasker.ts",
-    "test-analyzer.ts",
-    "types/**/*"
+    "amex-mcp-server-enhanced.ts",
+    "amex-vendor-unmasker.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "output",
-    "data"
-  ],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+    "data",
+    "tests"
+  ]
 }

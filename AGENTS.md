@@ -10,17 +10,17 @@ Dependencies (`npm install`) are installed automatically by the startup update
 script, so you normally don't need to install anything to start working.
 
 ### Running / testing (commands live in `package.json` scripts)
-- Self-contained tests (no external data needed): `npm test` (analyzer) and
-  `npm run test-unmasking`. Both generate their own sample CSV.
+- Tests (no personal data needed): `npm test`. Unmasking only: `npm run test-unmasking`.
+- Demo that writes `data/test-amex.csv` and `output/test-analysis.xlsx`: `npm run demo`.
 - Type-check / compile: `npm run build` (uses `amex-mcp-tsconfig.json`, emits `dist/`).
-- Dev server: `npm run dev` (runs `amex-mcp-server.ts` via `tsx`; `dev:enhanced` for
-  the enhanced server). Use the `:enhanced` variants for the extra toolset.
+- Dev server: `npm run dev` (standard toolset via `tsx`). `npm run dev:enhanced` for the full catalog. `npm run dev:basic` for the original six tools plus `load_statement`.
+- CLI: `npx tsx src/cli.ts --help`.
 
 ### Non-obvious notes
 - The server communicates over **stdio**, so "running" it just blocks waiting for
   JSON-RPC on stdin. To smoke-test it without an MCP client, pipe a newline-delimited
   `initialize` + `notifications/initialized` + `tools/list` JSON-RPC sequence into
   `npx tsx amex-mcp-server.ts` and read the responses from stdout.
-- Generated `data/` (input CSVs) and `output/` (xlsx exports) are gitignored; the test
-  scripts create them on demand.
+- Analysis code lives in `src/`. Root `amex-mcp-server.ts` / `amex-mcp-server-enhanced.ts` are entry wrappers.
+- Generated `data/*.csv` and `output/` exports are gitignored; tests use in-memory fixtures.
 - `npm audit` reports some advisories from transitive deps; they do not affect dev/test.
