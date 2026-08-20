@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="720" viewBox="0 0 980 720" role="img">
+  <title>amex-analysis analyze</title>
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A313A"/>
+      <stop offset="1" stop-color="#1C2128"/>
+    </linearGradient>
+  </defs>
+  <rect width="980" height="720" rx="16" fill="#0D1117" stroke="#30363D"/>
+  <rect width="980" height="44" rx="16" fill="url(#chrome)"/>
+  <rect y="28" width="980" height="16" fill="url(#chrome)"/>
+  <circle cx="28" cy="22" r="6" fill="#FF5F57"/>
+  <circle cx="48" cy="22" r="6" fill="#FEBC2E"/>
+  <circle cx="68" cy="22" r="6" fill="#28C840"/>
+  <text x="490" y="28" text-anchor="middle" fill="#8B949E" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13">amex-analysis analyze statement.csv</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#E6EDF3">
+    <text x="28" y="80"><tspan fill="#3FB950">o</tspan> npx tsx src/cli.ts analyze statement.csv</text>
+    <text x="28" y="118" fill="#58A6FF">Amex spending analysis</text>
+    <text x="28" y="140" fill="#58A6FF">======================</text>
+    <text x="28" y="176">Period: 2023-11-08 to 2024-01-20</text>
+    <text x="28" y="198">Charges: $471.64 (20 charges)</text>
+    <text x="28" y="220">Credits / refunds: $12.00</text>
+    <text x="28" y="242">Payments: $500.00</text>
+    <text x="28" y="264">Net spend: $459.64</text>
+    <text x="28" y="286">Vendors: 13  Transactions: 22</text>
+    <text x="28" y="322" fill="#C9A227">Subscriptions</text>
+    <text x="28" y="344">  Count: 5</text>
+    <text x="28" y="366">  Monthly equivalent: $93.96</text>
+    <text x="28" y="388">  Annual equivalent: $1127.52</text>
+    <text x="28" y="424" fill="#C9A227">Top vendors</text>
+    <text x="28" y="446">  Adobe: $158.97 (3 tx)</text>
+    <text x="28" y="468">  Whole Foods: $67.89 (1 tx)</text>
+    <text x="28" y="490">  Netflix: $47.97 (3 tx)</text>
+    <text x="28" y="512">  Shell Gas Station: $45.00 (1 tx)</text>
+    <text x="28" y="534">  Amazon: $32.45 (2 tx)</text>
+    <text x="28" y="556">  Spotify: $29.97 (3 tx)</text>
+    <text x="28" y="578">  Grubhub <tspan fill="#3FB950">[PayPal]</tspan>: $28.90 (1 tx)</text>
+    <text x="28" y="600">  Uber: $18.50 (1 tx)</text>
+    <text x="28" y="622">  Corner Cafe <tspan fill="#3FB950">[Toast]</tspan>: $12.75 (1 tx)</text>
+    <text x="28" y="644">  Substack <tspan fill="#3FB950">[Stripe]</tspan>: $10.00 (2 tx)</text>
+    <text x="28" y="680" fill="#8B949E">Payments are listed. They are not spend.</text>
+  </g>
+</svg>
