@@ -1,177 +1,58 @@
 # Changelog
 
-All notable changes to the AmexAnalysis-MCP project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [3.0.0] - 2026-08-20
+
+### Added
+- Session cache: `load_statement` plus optional `csvPath` on every other tool
+- MCP resources (`amex://statement/summary`, subscriptions, categories, anomalies, unmasked) and prompts
+- CLI: `analyze`, `unmask`, `serve` with `--help` and no prompts
+- Public analysis API: charges vs credits vs payments, `vendors` on the result object
+- Real `node:test` suite for parser, unmasker, analyzer, session, CLI, and tool catalog
+- MIT LICENSE file
+
+### Changed
+- One analysis engine shared by the basic, standard, and enhanced MCP entry points
+- MCP TypeScript SDK upgraded from 0.5.0 to 1.x (`McpServer`, resources, prompts)
+- Subscription "unused" checks use the statement end date, not the wall clock
+- Vendor unmasking maps only specific merchants (no more `COFFEE` → "Local Coffee Shop")
+- `PP*` descriptors such as `PP*SPOTIFY` unmask correctly
+- Docs rewritten to match the implementation
+
+### Fixed
+- Enhanced server no longer `require()`s a non-existent default export
+- Enhanced tools no longer read a missing `analysis.vendors` field
+- Payments and refunds are no longer counted as spend via `Math.abs`
+- Dates parse as `M/D/YYYY` / `YYYY-MM-DD` in UTC instead of locale `new Date(string)`
+- Re-parsing a file resets vendor state
+- Fraud-like flags no longer remove vendors from totals
+- `npm run build:enhanced` compiles the same project as `npm run build`
 
 ## [2.0.1] - 2025-01-15
 
 ### Fixed
-- **Repository URL**: Updated all references from `amex-analysis-mcp` to `amex-anaylsis-mcp` throughout the codebase
-- **Test Execution**: Fixed test timeout issue by modifying `amex-mcp-server.ts:1548-1552` to only start the MCP server when run directly
-- **Vendor Unmasking**: Improved vendor unmasking in `amex-vendor-unmasker.ts:73-77` to properly handle both `STR*` and `STRIPE` patterns
+- Repository URL references
+- MCP server only starts when the file is executed directly
+- Stripe `STR*` / `STRIPE` patterns
 
 ### Added
-- **Test Coverage**: Created `test-unmasking.ts` with comprehensive vendor unmasking tests
-
-### Changed
-- Verified all functionality after repository URL update
+- `test-unmasking.ts` demo script
 
 ## [2.0.0] - 2024-01-15
 
-### 🎉 Major Release: Vendor Unmasking Technology
-
-#### Added
-- **Vendor Unmasking Engine**: Revolutionary pattern recognition system that reveals real merchants hidden behind payment processors
-  - Supports 10+ major payment processors (PayPal, Square, Stripe, Toast, Venmo, etc.)
-  - Intelligent extraction algorithms with confidence scoring
-  - Manual review flagging for uncertain extractions
-  - Context-aware vendor suggestions based on transaction patterns
-
-- **Enhanced Excel Exports**:
-  - New "Obscured Vendors" sheet showing all payment processor transactions
-  - Confidence scores and extraction details
-  - Manual review instructions and suggestions
-  - Payment processor usage statistics
-
-- **TypeScript Migration**: 
-  - Full TypeScript implementation for better type safety
-  - Comprehensive type definitions for all data structures
-  - Better IDE support and autocomplete
-
-- **Improved Analysis Engine**:
-  - Smarter subscription detection with pattern variance analysis
-  - Enhanced fraud detection with multi-layer validation
-  - Better category inference with expanded keyword database
-  - Duplicate transaction detection across vendors
-
-#### Changed
-- Migrated from JavaScript to TypeScript
-- Improved vendor normalization algorithm
-- Enhanced recurring pattern detection accuracy
-- Better handling of edge cases in CSV parsing
-- More detailed insights and recommendations
-
-#### Fixed
-- Currency parsing issues with different formats
-- Date handling for various CSV export formats
-- Memory efficiency for large transaction sets
-- Excel export formatting issues
+### Added
+- Vendor unmasking engine
+- TypeScript implementation
+- Excel sheets for obscured vendors
 
 ## [1.5.0] - 2023-12-01
 
 ### Added
-- MCP (Model Context Protocol) integration
-- Support for Claude Desktop
-- Batch processing capabilities
-- JSON export format
-- Command-line interface improvements
-
-### Changed
-- Refactored core analysis engine for better performance
-- Improved subscription detection algorithm
-- Enhanced categorization rules
-
-### Fixed
-- CSV parsing errors with special characters
-- Timezone handling issues
-- Excel export memory leaks
+- First MCP integration for Claude Desktop
 
 ## [1.0.0] - 2023-10-15
 
-### Initial Release
-
-#### Features
-- Basic Amex CSV parsing
-- Vendor spending analysis
-- Simple subscription detection
-- Excel export functionality
-- Category-based spending breakdown
-- Top vendor identification
-- Basic fraud detection
-
-#### Known Limitations
-- No payment processor detection
-- Limited subscription patterns
-- Basic Excel formatting
-- English-only support
-
-## [0.5.0-beta] - 2023-09-01
-
-### Beta Release
-- Proof of concept for Amex transaction analysis
-- Basic CSV parsing functionality
-- Simple vendor aggregation
-- Initial subscription detection logic
-
----
-
-## Roadmap for Future Releases
-
-### [2.1.0] - Planned
-- Machine learning-based vendor identification
-- Support for multiple credit card formats (Chase, Citi, etc.)
-- Browser extension for real-time analysis
-- Mobile app companion
-
-### [2.2.0] - Planned
-- Receipt matching and itemization
-- Budget tracking and alerts
-- Spending forecasts and trends
-- Multi-currency support
-
-### [3.0.0] - Planned
-- AI-powered financial insights
-- Integration with accounting software
-- Automated expense categorization
-- Tax preparation assistance
-
-## Migration Guide
-
-### From 1.x to 2.0
-
-1. **File Structure Changes**:
-   ```bash
-   # Old structure
-   server.js
-   vendor-unmasker.js
-   
-   # New structure
-   amex-mcp-server.ts
-   amex-vendor-unmasker.ts
-   ```
-
-2. **Import Changes**:
-   ```typescript
-   // Old
-   import { AmexSpendingAnalyzer } from './server.js';
-   
-   // New
-   import { AmexSpendingAnalyzer } from './amex-mcp-server.js';
-   ```
-
-3. **Configuration Updates**:
-   ```json
-   // Update Claude Desktop config
-   {
-     "mcpServers": {
-       "amex-analysis": {
-         "command": "node",
-         "args": ["path/to/dist/amex-mcp-server.js"]
-       }
-     }
-   }
-   ```
-
-4. **New Dependencies**:
-   ```bash
-   npm install typescript tsx @types/node @types/papaparse
-   ```
-
-## Support
-
-For issues, feature requests, or questions:
-- Create an issue on GitHub
-- Check the CHEATSHEET.md for common solutions
-- Review the comprehensive README.md for detailed documentation
+### Added
+- Initial CSV parsing, vendor totals, and Excel export

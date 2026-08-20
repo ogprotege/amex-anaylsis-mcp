@@ -56,7 +56,8 @@ async function testAnalyzer() {
     console.log(`Vendors: ${analysis.vendorCount}`);
     console.log(`Transactions: ${analysis.transactionCount}`);
     console.log(`Subscriptions Found: ${analysis.subscriptionCount}`);
-    console.log(`Monthly Subscription Cost: $${analysis.subscriptionTotal.toFixed(2)}\n`);
+    console.log(`Subscription charges: $${analysis.subscriptionTotal.toFixed(2)}`);
+    console.log(`Monthly equivalent: $${analysis.monthlySubscriptionCost.toFixed(2)}\n`);
     
     // Show top vendors
     console.log('🏪 Top 5 Vendors:');
