@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" role="img">
+  <title>Unmask a processor descriptor</title>
+  <desc>PAYPAL *GRUBHUB becomes Grubhub. Local analysis, no upload.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07101C"/>
+      <stop offset="0.5" stop-color="#0B1C30"/>
+      <stop offset="1" stop-color="#071422"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="40%" r="50%">
+      <stop offset="0" stop-color="#1B7FEA" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#1B7FEA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E6C76A"/>
+      <stop offset="1" stop-color="#B8922A"/>
+    </linearGradient>
+    <linearGradient id="pillA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#153044"/>
+      <stop offset="1" stop-color="#0C1A26"/>
+    </linearGradient>
+    <linearGradient id="pillB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1C4630"/>
+      <stop offset="1" stop-color="#102418"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#8BA3B8" stroke-opacity="0.055"/>
+    </pattern>
+    <clipPath id="card">
+      <rect width="1280" height="340" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+  <rect width="1280" height="340" fill="url(#sky)"/>
+  <rect width="1280" height="340" fill="url(#glow)"/>
+  <rect width="1280" height="340" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1280" height="4" fill="url(#gold)"/>
+  <rect x="0" y="336" width="1280" height="4" fill="url(#gold)"/>
+
+  <text x="640" y="78" text-anchor="middle" fill="#C9A227" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="7">THE STATEMENT SAYS</text>
+
+  <g transform="translate(86 128)">
+    <rect width="500" height="88" rx="44" fill="url(#pillA)" stroke="#3A6A88" stroke-width="2"/>
+    <text x="250" y="56" text-anchor="middle" fill="#E8F1F8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="30" font-weight="700">PAYPAL *GRUBHUB</text>
+  </g>
+
+  <g transform="translate(612 154)">
+    <path d="M0 18h56" stroke="#C9A227" stroke-width="5" stroke-linecap="round"/>
+    <path d="M44 6l20 12-20 12" fill="none" stroke="#C9A227" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(700 128)">
+    <rect width="494" height="88" rx="44" fill="url(#pillB)" stroke="#3D8A58" stroke-width="2"/>
+    <text x="247" y="56" text-anchor="middle" fill="#F4FBF6" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="700">Grubhub</text>
+  </g>
+
+  <text x="640" y="284" text-anchor="middle" fill="#9BB0C3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="1">Square  /  Stripe  /  Toast  /  Venmo  /  Cash App  /  local only</text>
+  </g>
+</svg>
